@@ -1,0 +1,76 @@
+/* Reset */
+#hilp_app{
+  all: initial;
+  *{
+    all: unset;
+    cursor: auto;
+    box-sizing:border-box;
+    font-family: sans-serif;
+
+    input,textarea, .textarea{
+      background:rgba(255,255,255,0.1);
+      border-radius:2px;
+      padding:10px;
+      &::-webkit-input-placeholder {
+        color: rgba($white-grey, 0.5);
+      }
+      &:-moz-placeholder {
+        color: rgba($white-grey, 0.5);
+      }
+      &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: rgba($white-grey, 0.5);
+      }
+      &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: rgba($white-grey, 0.5);
+      }
+    }
+    button, .button{
+      background:rgba(255,255,255,1);
+      border-radius:2px;
+      padding:8px 45px;
+      border:1px solid rgba(255,255,255,1);
+      color:rgba(0,0,0,0.9);
+      font-size:14px;
+      font-weight:bold;
+      text-transform:uppercase;
+      position:relative;
+      overflow: hidden;
+      display:inline-block;
+      &:after{
+        content: "\f345";
+        font-family: dashicons;
+        position:absolute;
+        right:5px;
+        top:-100%;
+        opacity:0;
+        visibility:hidden;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out ;
+        -ms-transition: all 0.3s ease-in-out ;
+        -o-transition: all 0.3s ease-in-out ;
+        transition: all 0.3s ease-in-out ;
+      }
+      &:hover{
+        padding: 8px 50px;
+        &:after{
+          top:50%;
+          opacity:1;
+          visibility: visible;
+        }
+      }
+      &:focus{
+        -webkit-transform: scale(0.95);
+        -moz-transform: scale(0.95);
+        -ms-transform: scale(0.95);
+        -o-transform: scale(0.95);
+        transform: scale(0.95);
+      }
+    }
+  }
+}
+/* Reset END */

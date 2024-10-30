@@ -1,0 +1,24 @@
+$yellow: #fbfd6d;
+$green: #95fd7f;
+$red: #ff687a;
+$darkgrey: #23282d;
+$lightgrey: #33373c;
+$white-grey: #eeeeee;
+$white: #ffffff;
+
+@keyframes dashspin {
+  from {
+    -webkit-transform: rotate( 0deg );
+    -moz-transform: rotate( 0deg );
+    -ms-transform: rotate( 0deg );
+    -o-transform: rotate( 0deg );
+    transform: rotate( 0deg );
+  }
+  to {
+    -webkit-transform: rotate( 360deg );
+    -moz-transform: rotate( 360deg );
+    -ms-transform: rotate( 360deg );
+    -o-transform: rotate( 360deg );
+    transform: rotate( 360deg );
+  }
+}

@@ -1,0 +1,21 @@
+/* WP admin bar */
+#wpadminbar #wp-toolbar #wp-admin-bar-hilp{
+  //Ensures it shows up in mobile
+  display:list-item;
+
+  .ab-icon:before{
+    content: url("../images/hilp-icon.png");
+    top: -2px;
+    color:$yellow;
+  }
+  span.ab-label{
+    color:$yellow;
+  }
+
+  &:hover{
+    span.ab-label{
+      color:$yellow;
+    }
+  }
+}
+/* WP admin bar END */

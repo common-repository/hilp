@@ -1,0 +1,525 @@
+/*
+ * Hilp admin frontend CSS.
+ * This will only load for admins on the frontend
+ */
+@keyframes dashspin {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+html {
+  -webkit-transition: margin-top ease-in-out 0.3s 0.08s;
+  -moz-transition: margin-top ease-in-out 0.3s 0.08s;
+  -ms-transition: margin-top ease-in-out 0.3s 0.08s;
+  -o-transition: margin-top ease-in-out 0.3s 0.08s;
+  transition: margin-top ease-in-out 0.3s 0.08s; }
+  html.hilp_active {
+    margin-top: 245px !important; }
+    html.hilp_active body {
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -o-user-select: none;
+      user-select: none; }
+      html.hilp_active body header[style="top: 32px;"] {
+        -webkit-transition: top ease-in-out 0.3s 0.08s;
+        -moz-transition: top ease-in-out 0.3s 0.08s;
+        -ms-transition: top ease-in-out 0.3s 0.08s;
+        -o-transition: top ease-in-out 0.3s 0.08s;
+        transition: top ease-in-out 0.3s 0.08s;
+        top: 245px !important; }
+      html.hilp_active body textarea, html.hilp_active body .textarea {
+        -webkit-user-select: initial;
+        -khtml-user-select: initial;
+        -moz-user-select: initial;
+        -o-user-select: initial;
+        user-select: initial;
+        display: block; }
+      html.hilp_active body #hilp_app {
+        display: block; }
+        html.hilp_active body #hilp_app #hilp_panel_wrap {
+          -webkit-transform: translateY(0%);
+          -moz-transform: translateY(0%);
+          -ms-transform: translateY(0%);
+          -o-transform: translateY(0%);
+          transform: translateY(0%); }
+        html.hilp_active body #hilp_app #hilp_pins {
+          visibility: visible;
+          top: 0;
+          left: 0;
+          opacity: 1; }
+  html.hilp_active_pin * {
+    cursor: crosshair !important; }
+  html.hilp_active_pin #hilp_app * {
+    cursor: unset !important; }
+  html.hilp_active_pin body #hilp_app #hilp_panel_wrap #hilp_panel {
+    width: 100%;
+    background: #33373c; }
+    html.hilp_active_pin body #hilp_app #hilp_panel_wrap #hilp_panel > div {
+      float: left;
+      width: 50%;
+      height: 213px;
+      padding: 10px 15px; }
+      html.hilp_active_pin body #hilp_app #hilp_panel_wrap #hilp_panel > div:first-child {
+        padding-right: 0; }
+      html.hilp_active_pin body #hilp_app #hilp_panel_wrap #hilp_panel > div #hilp_case, html.hilp_active_pin body #hilp_app #hilp_panel_wrap #hilp_panel > div #hilp_portal {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 5px;
+        height: 100%; }
+      html.hilp_active_pin body #hilp_app #hilp_panel_wrap #hilp_panel > div form {
+        display: block; }
+        html.hilp_active_pin body #hilp_app #hilp_panel_wrap #hilp_panel > div form#hilp_case_form #hilp_add_pointer_wrap #hilp_add_pointer {
+          background: rgba(255, 245, 139, 0.25); }
+
+body {
+  /* Reset */
+  /* Reset END */
+  /* WP admin bar */
+  /* WP admin bar END */
+  /* Notification */
+  /* Notification END */
+  /* App */
+  /* App END */ }
+  body #hilp_app {
+    all: initial; }
+    body #hilp_app * {
+      all: unset;
+      cursor: auto;
+      box-sizing: border-box;
+      font-family: sans-serif; }
+      body #hilp_app * input, body #hilp_app * textarea, body #hilp_app * .textarea {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+        padding: 10px; }
+        body #hilp_app * input::-webkit-input-placeholder, body #hilp_app * textarea::-webkit-input-placeholder, body #hilp_app * .textarea::-webkit-input-placeholder {
+          color: rgba(238, 238, 238, 0.5); }
+        body #hilp_app * input:-moz-placeholder, body #hilp_app * textarea:-moz-placeholder, body #hilp_app * .textarea:-moz-placeholder {
+          color: rgba(238, 238, 238, 0.5); }
+        body #hilp_app * input::-moz-placeholder, body #hilp_app * textarea::-moz-placeholder, body #hilp_app * .textarea::-moz-placeholder {
+          /* Mozilla Firefox 19+ */
+          color: rgba(238, 238, 238, 0.5); }
+        body #hilp_app * input:-ms-input-placeholder, body #hilp_app * textarea:-ms-input-placeholder, body #hilp_app * .textarea:-ms-input-placeholder {
+          /* Internet Explorer 10-11 */
+          color: rgba(238, 238, 238, 0.5); }
+      body #hilp_app * button, body #hilp_app * .button {
+        background: white;
+        border-radius: 2px;
+        padding: 8px 45px;
+        border: 1px solid white;
+        color: rgba(0, 0, 0, 0.9);
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+        display: inline-block; }
+        body #hilp_app * button:after, body #hilp_app * .button:after {
+          content: "\f345";
+          font-family: dashicons;
+          position: absolute;
+          right: 5px;
+          top: -100%;
+          opacity: 0;
+          visibility: hidden;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          -ms-transition: all 0.3s ease-in-out;
+          -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out; }
+        body #hilp_app * button:hover, body #hilp_app * .button:hover {
+          padding: 8px 50px; }
+          body #hilp_app * button:hover:after, body #hilp_app * .button:hover:after {
+            top: 50%;
+            opacity: 1;
+            visibility: visible; }
+        body #hilp_app * button:focus, body #hilp_app * .button:focus {
+          -webkit-transform: scale(0.95);
+          -moz-transform: scale(0.95);
+          -ms-transform: scale(0.95);
+          -o-transform: scale(0.95);
+          transform: scale(0.95); }
+  body #wpadminbar #wp-toolbar #wp-admin-bar-hilp {
+    display: list-item; }
+    body #wpadminbar #wp-toolbar #wp-admin-bar-hilp .ab-icon:before {
+      content: url("../images/hilp-icon.png");
+      top: -2px;
+      color: #fbfd6d; }
+    body #wpadminbar #wp-toolbar #wp-admin-bar-hilp span.ab-label {
+      color: #fbfd6d; }
+    body #wpadminbar #wp-toolbar #wp-admin-bar-hilp:hover span.ab-label {
+      color: #fbfd6d; }
+  body #hilp_notification {
+    cursor: n-resize;
+    margin-top: -300px;
+    position: fixed;
+    z-index: 150;
+    left: 50%;
+    top: 42px;
+    transform: translateX(-50%);
+    padding: 20px 50px;
+    background: #23282d;
+    color: #eeeeee;
+    font-size: 12px; }
+    body #hilp_notification.error {
+      margin-top: 0;
+      border-top: 5px solid #ff687a; }
+    body #hilp_notification.success {
+      margin-top: 0;
+      border-top: 5px solid #95fd7f; }
+  body #hilp_app {
+    position: absolute;
+    z-index: 2147483647;
+    left: 0;
+    top: 0;
+    /* Toolbar */
+    /* Toolbar END */
+    /* List */
+    /* List END */ }
+    body #hilp_app * {
+      -webkit-transition: all 0.3s ease-in-out, top 0ms, left 0ms, visibility 0ms;
+      -moz-transition: all 0.3s ease-in-out, top 0ms, left 0ms, visibility 0ms;
+      -o-transition: all 0.3s ease-in-out, 0ms, top 0ms, left 0ms, visibility 0ms;
+      transition: all 0.3s ease-in-out, top 0ms, left 0ms, visibility 0ms; }
+    body #hilp_app ul {
+      margin: 0;
+      display: block; }
+    body #hilp_app div {
+      display: block; }
+    body #hilp_app span {
+      display: inline; }
+    body #hilp_app .dashicons:before, body #hilp_app .dashicons:after {
+      font-family: dashicons; }
+    body #hilp_app li {
+      list-style: none; }
+    body #hilp_app .small {
+      font-size: 0.7em; }
+    body #hilp_app #hilp_panel_wrap {
+      direction: ltr;
+      cursor: default !important;
+      color: #eeeeee;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #23282d;
+      -webkit-transform: translateY(-100%);
+      -moz-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+      -o-transform: translateY(-100%);
+      transform: translateY(-100%);
+      max-height: 250px;
+      z-index: 100;
+      overflow: hidden; }
+      body #hilp_app #hilp_panel_wrap #hilp_toolbar {
+        text-align: right;
+        background: rgba(255, 255, 255, 0.05); }
+        body #hilp_app #hilp_panel_wrap #hilp_toolbar span {
+          display: inline-block;
+          line-height: 32px;
+          height: 32px;
+          text-align: center;
+          vertical-align: top; }
+        body #hilp_app #hilp_panel_wrap #hilp_toolbar #hilp_toolbar_user {
+          -webkit-user-select: text;
+          -khtml-user-select: text;
+          -moz-user-select: text;
+          -o-user-select: text;
+          user-select: text;
+          font-size: 12px;
+          padding: 0 15px;
+          float: left;
+          border-right: 1px solid rgba(255, 255, 255, 0.2); }
+          body #hilp_app #hilp_panel_wrap #hilp_toolbar #hilp_toolbar_user img {
+            vertical-align: sub;
+            margin: 3px 2px 0;
+            max-width: 15px; }
+        body #hilp_app #hilp_panel_wrap #hilp_toolbar #hilp_toolbar_settings {
+          font-size: 12px;
+          padding: 0 15px;
+          float: left; }
+          body #hilp_app #hilp_panel_wrap #hilp_toolbar #hilp_toolbar_settings a {
+            cursor: pointer; }
+        body #hilp_app #hilp_panel_wrap #hilp_toolbar #hilp_toolbar_deactivation {
+          width: 32px; }
+          body #hilp_app #hilp_panel_wrap #hilp_toolbar #hilp_toolbar_deactivation:hover {
+            background: rgba(255, 255, 255, 0.05); }
+      body #hilp_app #hilp_panel_wrap ul {
+        background: rgba(35, 40, 45, 0.9); }
+        body #hilp_app #hilp_panel_wrap ul li.hilp_menu {
+          display: inline-block;
+          vertical-align: top; }
+          body #hilp_app #hilp_panel_wrap ul li.hilp_menu .hilp_pointer {
+            padding: 0 15px;
+            height: 32px;
+            display: block; }
+          body #hilp_app #hilp_panel_wrap ul li.hilp_menu .ab-icon {
+            vertical-align: middle;
+            display: inline-block;
+            position: relative;
+            font: 400 20px/1 dashicons;
+            speak: none;
+            padding: 6px 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale; }
+            body #hilp_app #hilp_panel_wrap ul li.hilp_menu .ab-icon:before {
+              position: relative; }
+          body #hilp_app #hilp_panel_wrap ul li.hilp_menu .ab-label {
+            vertical-align: middle;
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 32px; }
+          body #hilp_app #hilp_panel_wrap ul li.hilp_menu#hilp_toolbar_save .ab-icon:before {
+            content: "\f480"; }
+          body #hilp_app #hilp_panel_wrap ul li.hilp_menu#hilp_toolbar_send .ab-icon:before {
+            content: "\f310"; }
+          body #hilp_app #hilp_panel_wrap ul li.hilp_menu:hover {
+            background: rgba(255, 255, 255, 0.05); }
+      body #hilp_app #hilp_panel_wrap #hilp_loading {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        font-size: 30px;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        color: #ffffff;
+        text-align: center; }
+        body #hilp_app #hilp_panel_wrap #hilp_loading #hilp_loading_text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+        body #hilp_app #hilp_panel_wrap #hilp_loading.true .dashicons {
+          animation: dashspin 1s infinite;
+          animation-timing-function: linear; }
+      body #hilp_app #hilp_panel_wrap #hilp_panel {
+        width: 100%;
+        background: #33373c; }
+        body #hilp_app #hilp_panel_wrap #hilp_panel > div {
+          float: left;
+          width: 50%;
+          height: 213px;
+          padding: 10px 15px; }
+          body #hilp_app #hilp_panel_wrap #hilp_panel > div:first-child {
+            padding-right: 0; }
+          body #hilp_app #hilp_panel_wrap #hilp_panel > div #hilp_case, body #hilp_app #hilp_panel_wrap #hilp_panel > div #hilp_portal {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            height: 100%; }
+          body #hilp_app #hilp_panel_wrap #hilp_panel > div form {
+            display: block; }
+            body #hilp_app #hilp_panel_wrap #hilp_panel > div form#hilp_case_form {
+              height: 168px;
+              overflow-y: auto;
+              counter-reset: li; }
+              body #hilp_app #hilp_panel_wrap #hilp_panel > div form#hilp_case_form li {
+                display: block;
+                margin: 5px 0; }
+                body #hilp_app #hilp_panel_wrap #hilp_panel > div form#hilp_case_form li:before {
+                  counter-increment: li;
+                  content: counter(li);
+                  width: 5%;
+                  display: inline-block;
+                  text-align: center; }
+                body #hilp_app #hilp_panel_wrap #hilp_panel > div form#hilp_case_form li input {
+                  width: 95%; }
+              body #hilp_app #hilp_panel_wrap #hilp_panel > div form#hilp_case_form #hilp_add_pointer_wrap {
+                text-align: center; }
+                body #hilp_app #hilp_panel_wrap #hilp_panel > div form#hilp_case_form #hilp_add_pointer_wrap #hilp_add_pointer {
+                  padding: 5px;
+                  display: inline-block;
+                  background: rgba(255, 255, 255, 0.2);
+                  border-radius: 99px; }
+                  body #hilp_app #hilp_panel_wrap #hilp_panel > div form#hilp_case_form #hilp_add_pointer_wrap #hilp_add_pointer .dashicons {
+                    margin-right: 5px;
+                    color: white;
+                    cursor: pointer; }
+                    body #hilp_app #hilp_panel_wrap #hilp_panel > div form#hilp_case_form #hilp_add_pointer_wrap #hilp_add_pointer .dashicons:before {
+                      font-size: 26px;
+                      position: relative;
+                      top: 4px;
+                      left: 2px;
+                      color: #fbfd6d; }
+                  body #hilp_app #hilp_panel_wrap #hilp_panel > div form#hilp_case_form #hilp_add_pointer_wrap #hilp_add_pointer:hover {
+                    background: rgba(255, 255, 255, 0.3); }
+          body #hilp_app #hilp_panel_wrap #hilp_panel > div #hilp_portal {
+            text-align: center; }
+            body #hilp_app #hilp_panel_wrap #hilp_panel > div #hilp_portal #hilp_login {
+              padding: 15px; }
+            body #hilp_app #hilp_panel_wrap #hilp_panel > div #hilp_portal #hilp_loggedin #hilp_portal_developers {
+              overflow-x: auto;
+              white-space: nowrap;
+              padding: 10px 0;
+              height: 113px; }
+              body #hilp_app #hilp_panel_wrap #hilp_panel > div #hilp_portal #hilp_loggedin #hilp_portal_developers .hilp_portal_developer {
+                max-width: 100px;
+                padding: 0 5px;
+                display: inline-block; }
+                body #hilp_app #hilp_panel_wrap #hilp_panel > div #hilp_portal #hilp_loggedin #hilp_portal_developers .hilp_portal_developer span {
+                  font-size: 14px; }
+        body #hilp_app #hilp_panel_wrap #hilp_panel .hilp_choose_plan > div {
+          display: inline-block;
+          width: 50%;
+          padding: 20px 0; }
+        body #hilp_app #hilp_panel_wrap #hilp_panel .hilp_choose_plan label > input {
+          /* HIDE RADIO */
+          visibility: hidden;
+          /* Makes input not-clickable */
+          position: absolute;
+          /* Remove input from document flow */ }
+        body #hilp_app #hilp_panel_wrap #hilp_panel .hilp_choose_plan label > input + span {
+          display: block;
+          cursor: pointer;
+          border-radius: 9999px;
+          border: 2px solid transparent;
+          width: 20px;
+          height: 20px;
+          margin: 0 auto 5px;
+          background: rgba(255, 255, 255, 0.3); }
+        body #hilp_app #hilp_panel_wrap #hilp_panel .hilp_choose_plan label > input:checked + span {
+          /* (RADIO CHECKED) STYLES */
+          border: 2px solid #fbfd6d; }
+    body #hilp_app #hilp_pins {
+      visibility: hidden;
+      top: -9999px;
+      left: -9999px;
+      opacity: 0;
+      position: relative;
+      z-index: 99; }
+    body #hilp_app .hilp_pointer {
+      cursor: pointer !important; }
+    body #hilp_app #hilp_list {
+      counter-reset: li; }
+    body #hilp_app .hilp_request {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+      z-index: 99;
+      cursor: pointer;
+      transform: translateX(-50%); }
+      body #hilp_app .hilp_request:before {
+        pointer-events: none;
+        counter-increment: li;
+        content: counter(li);
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -25%);
+        z-index: 9999;
+        color: #fbfd6d;
+        font-size: 11px; }
+      body #hilp_app .hilp_request.hilp_focus .hilp_request_bar {
+        cursor: move !important; }
+      body #hilp_app .hilp_request .hilp_the_pointer {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        width: 20px;
+        position: relative;
+        border: 10px solid rgba(0, 0, 0, 0);
+        border-top: 20px solid #fbfd6d;
+        border-bottom: 0 solid #fbfd6d;
+        cursor: move !important;
+        -webkit-transition: all ease-in-out 0.3s;
+        -moz-transition: all ease-in-out 0.3s;
+        -ms-transition: all ease-in-out 0.3s;
+        -o-transition: all ease-in-out 0.3s;
+        transition: all ease-in-out 0.3s;
+        opacity: 0.7;
+        transform-origin: top center; }
+        body #hilp_app .hilp_request .hilp_the_pointer:before {
+          -webkit-transition: all ease-in-out 0.3s;
+          -moz-transition: all ease-in-out 0.3s;
+          -ms-transition: all ease-in-out 0.3s;
+          -o-transition: all ease-in-out 0.3s;
+          transition: all ease-in-out 0.3s;
+          -webkit-box-sizing: content-box;
+          -moz-box-sizing: content-box;
+          box-sizing: content-box;
+          width: 0;
+          height: 0;
+          position: absolute;
+          content: "";
+          bottom: 20px;
+          left: -10px;
+          border: 20px solid rgba(0, 0, 0, 0);
+          border-bottom: 20px solid #fbfd6d; }
+        body #hilp_app .hilp_request .hilp_the_pointer .inner-icon {
+          -webkit-box-sizing: content-box;
+          -moz-box-sizing: content-box;
+          box-sizing: content-box;
+          width: 16px;
+          position: absolute;
+          top: -19px;
+          left: -6px;
+          border: 8px solid rgba(0, 0, 0, 0);
+          border-top: 16px solid #23282d;
+          border-bottom: 0 solid #23282d;
+          cursor: move !important;
+          -webkit-transition: all ease-in-out 0.3s;
+          -moz-transition: all ease-in-out 0.3s;
+          -ms-transition: all ease-in-out 0.3s;
+          -o-transition: all ease-in-out 0.3s;
+          transition: all ease-in-out 0.3s; }
+          body #hilp_app .hilp_request .hilp_the_pointer .inner-icon:before {
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+            width: 0;
+            height: 0;
+            position: absolute;
+            content: "";
+            bottom: 16px;
+            left: -8px;
+            border: 16px solid rgba(0, 0, 0, 0);
+            border-bottom: 16px solid #23282d; }
+        body #hilp_app .hilp_request .hilp_the_pointer:hover {
+          opacity: 1; }
+    body #hilp_app #hilp_trash_can {
+      position: fixed;
+      bottom: 5px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      background: rgba(255, 104, 122, 0.5);
+      border: 2px solid #ff687a;
+      color: #ffffff;
+      font-size: 33px;
+      padding: 7px 70px 0px;
+      border-radius: 2px;
+      font-family: sans-serif;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+      body #hilp_app #hilp_trash_can.hover {
+        background: #ff687a;
+        padding: 7px 75px 0px; }
+
+/*# sourceMappingURL=hilp_admin_front.css.map */

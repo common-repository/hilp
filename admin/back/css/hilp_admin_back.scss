@@ -1,0 +1,105 @@
+/*
+ * Hilp admin backend CSS.
+ * This will only load for admin panel pages where user is_admin()
+ */
+
+@import '../../../variables';
+@import '../../front/css/wp_admin_bar';
+
+body{
+
+  #hilp_developer_mode{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999999999;
+    background: rgba(0,0,0,0.7);
+    padding-top:100px;
+  }
+  #hilp_cancel{
+    background:$red;
+    border:0;
+    color:$white;
+  }
+  #hilp_settings{
+    #hilp_response{
+      text-align:center;
+      font-size:15px;
+      font-weight: bold;
+      &.error, &.success, &.notice{
+        padding:15px;
+        margin-bottom:10px;
+      }
+      &.error{
+        background:$red;
+      }
+      &.success{
+        background:$green;
+      }
+      &.notice{
+        background:white;
+      }
+    }
+
+    .h1{
+      font-size: 23px;
+      font-weight: 400;
+      margin: 0;
+      padding: 9px 0 4px;
+      line-height: 29px;
+    }
+    .hilp_settings_page{
+      display:none;
+    }
+
+
+    #hilp_admin_time{
+      font-weight:bold;
+      &.time-left{
+        color:$green;
+      }
+      &.time-expired{
+        color:$red;
+      }
+    }
+
+  }
+  .hilp_settings_box{
+    background: white;
+    padding: 2em;
+    width: 95%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    img{
+      max-width:100%;
+    }
+    .notice{
+      display:none;
+    }
+    h1{
+      padding:0;
+    }
+    p{
+
+    }
+    input[type=text],input[type=email],input[type=password],select{
+      width:100%;
+      font-size: 1.3em;
+      padding: 0.5em;
+      margin-bottom:10px;
+    }
+    .submit{
+      text-align: right;
+      padding: 0;
+      margin: 5px 0 0;
+      .button{
+        padding: 0.5em 2em;
+        height: auto;
+      }
+    }
+  }
+
+}

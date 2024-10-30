@@ -1,0 +1,97 @@
+/*
+ * Hilp admin backend CSS.
+ * This will only load for admin panel pages where user is_admin()
+ */
+@keyframes dashspin {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+/* WP admin bar */
+#wpadminbar #wp-toolbar #wp-admin-bar-hilp {
+  display: list-item; }
+  #wpadminbar #wp-toolbar #wp-admin-bar-hilp .ab-icon:before {
+    content: url("../images/hilp-icon.png");
+    top: -2px;
+    color: #fbfd6d; }
+  #wpadminbar #wp-toolbar #wp-admin-bar-hilp span.ab-label {
+    color: #fbfd6d; }
+  #wpadminbar #wp-toolbar #wp-admin-bar-hilp:hover span.ab-label {
+    color: #fbfd6d; }
+
+/* WP admin bar END */
+body #hilp_developer_mode {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999999999999;
+  background: rgba(0, 0, 0, 0.7);
+  padding-top: 100px; }
+body #hilp_cancel {
+  background: #ff687a;
+  border: 0;
+  color: #ffffff; }
+body #hilp_settings #hilp_response {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold; }
+  body #hilp_settings #hilp_response.error, body #hilp_settings #hilp_response.success, body #hilp_settings #hilp_response.notice {
+    padding: 15px;
+    margin-bottom: 10px; }
+  body #hilp_settings #hilp_response.error {
+    background: #ff687a; }
+  body #hilp_settings #hilp_response.success {
+    background: #95fd7f; }
+  body #hilp_settings #hilp_response.notice {
+    background: white; }
+body #hilp_settings .h1 {
+  font-size: 23px;
+  font-weight: 400;
+  margin: 0;
+  padding: 9px 0 4px;
+  line-height: 29px; }
+body #hilp_settings .hilp_settings_page {
+  display: none; }
+body #hilp_settings #hilp_admin_time {
+  font-weight: bold; }
+  body #hilp_settings #hilp_admin_time.time-left {
+    color: #95fd7f; }
+  body #hilp_settings #hilp_admin_time.time-expired {
+    color: #ff687a; }
+body .hilp_settings_box {
+  background: white;
+  padding: 2em;
+  width: 95%;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1); }
+  body .hilp_settings_box img {
+    max-width: 100%; }
+  body .hilp_settings_box .notice {
+    display: none; }
+  body .hilp_settings_box h1 {
+    padding: 0; }
+  body .hilp_settings_box input[type=text], body .hilp_settings_box input[type=email], body .hilp_settings_box input[type=password], body .hilp_settings_box select {
+    width: 100%;
+    font-size: 1.3em;
+    padding: 0.5em;
+    margin-bottom: 10px; }
+  body .hilp_settings_box .submit {
+    text-align: right;
+    padding: 0;
+    margin: 5px 0 0; }
+    body .hilp_settings_box .submit .button {
+      padding: 0.5em 2em;
+      height: auto; }
+
+/*# sourceMappingURL=hilp_admin_back.css.map */

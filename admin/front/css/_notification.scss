@@ -1,0 +1,24 @@
+/* Notification */
+#hilp_notification{
+  cursor:n-resize;
+  margin-top:-300px;
+  position: fixed;
+  z-index:150;
+  left: 50%;
+  top: 42px;
+  transform: translateX(-50%);
+  padding: 20px 50px;
+  background: $darkgrey;
+  color: $white-grey;
+  font-size:12px;
+  &.error{
+    margin-top: 0;
+    border-top: 5px solid $red;
+  }
+  &.success{
+    margin-top: 0;
+    border-top: 5px solid $green;
+  }
+
+}
+/* Notification END */

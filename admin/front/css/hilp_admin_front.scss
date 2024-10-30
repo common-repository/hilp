@@ -1,0 +1,590 @@
+/*
+ * Hilp admin frontend CSS.
+ * This will only load for admins on the frontend
+ */
+
+@import '../../../variables';
+
+
+html{
+  -webkit-transition: margin-top ease-in-out 0.3s 0.08s;
+  -moz-transition: margin-top ease-in-out 0.3s 0.08s;
+  -ms-transition: margin-top ease-in-out 0.3s 0.08s;
+  -o-transition: margin-top ease-in-out 0.3s 0.08s;
+  transition: margin-top ease-in-out 0.3s 0.08s;
+
+  body{
+
+  }
+
+  &.hilp_active{
+    margin-top: 245px!important;
+
+    body{
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+
+      header[style="top: 32px;"]{
+        -webkit-transition: top ease-in-out 0.3s 0.08s;
+        -moz-transition: top ease-in-out 0.3s 0.08s;
+        -ms-transition: top ease-in-out 0.3s 0.08s;
+        -o-transition: top ease-in-out 0.3s 0.08s;
+        transition: top ease-in-out 0.3s 0.08s;
+        top: 245px!important;
+      }
+      textarea, .textarea{
+        -webkit-user-select: initial;
+        -khtml-user-select: initial;
+        -moz-user-select: initial;
+        -o-user-select: initial;
+        user-select: initial;
+        display:block;
+      }
+
+      #hilp_app{
+        display:block;
+        #hilp_panel_wrap{
+          -webkit-transform: translateY(0%);
+          -moz-transform: translateY(0%);
+          -ms-transform: translateY(0%);
+          -o-transform: translateY(0%);
+          transform: translateY(0%);
+        }
+        #hilp_pins{
+          visibility: visible;
+          top:0;
+          left:0;
+          opacity:1;
+        }
+      }
+    }
+  }
+
+  &.hilp_active_pin{
+    *{
+      cursor:crosshair!important;
+    }
+    #hilp_app *{
+      cursor:unset!important;
+    }
+    body{
+      #hilp_app{
+        #hilp_panel_wrap{
+          #hilp_panel{
+            width:100%;
+            background:$lightgrey;
+            > div {
+              float: left;
+              width: 50%;
+              height: 213px;
+              padding: 10px 15px;
+              &:first-child {
+                padding-right: 0;
+              }
+
+              #hilp_case, #hilp_portal {
+                background: rgba(0, 0, 0, 0.5);
+                padding: 10px;
+                border-radius: 5px;
+                height: 100%;
+              }
+
+              form {
+                display: block;
+                &#hilp_case_form {
+                  #hilp_add_pointer_wrap {
+                    #hilp_add_pointer {
+                      background: rgba(255, 245, 139, 0.25);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+body{
+
+  @import 'reset';
+
+  @import 'wp_admin_bar';
+  @import 'notification';
+
+
+
+
+  /* App */
+  #hilp_app{
+    position: absolute;
+    z-index: 2147483647;
+    left: 0;
+    top: 0;
+
+    *{
+      -webkit-transition: all 0.3s ease-in-out, top 0ms, left 0ms, visibility 0ms;
+      -moz-transition: all 0.3s ease-in-out, top 0ms, left 0ms, visibility 0ms;
+      -o-transition: all 0.3s ease-in-out, 0ms, top 0ms, left 0ms, visibility 0ms;
+      transition: all 0.3s ease-in-out, top 0ms, left 0ms, visibility 0ms;
+    }
+
+    ul{
+      margin:0;
+      display:block;
+    }
+    div{
+      display:block;
+    }
+    span{
+      display:inline;
+    }
+    .dashicons:before, .dashicons:after{
+      font-family:dashicons;
+    }
+    li{
+      list-style: none;
+    }
+
+    .small{
+      font-size:0.7em;
+    }
+    /* Toolbar */
+    #hilp_panel_wrap{
+      direction: ltr;
+      cursor:default!important;
+      color: $white-grey;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: $darkgrey;
+      -webkit-transform: translateY(-100%);
+      -moz-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+      -o-transform: translateY(-100%);
+      transform: translateY(-100%);
+      max-height:250px;
+      z-index:100;
+      overflow: hidden;
+
+      #hilp_toolbar{
+        text-align:right;
+        background:rgba(255,255,255,0.05);
+        span{
+          display:inline-block;
+          line-height: 32px;
+          height: 32px;
+          text-align:center;
+          vertical-align:top;
+        }
+        #hilp_toolbar_user{
+          -webkit-user-select: text;
+          -khtml-user-select: text;
+          -moz-user-select: text;
+          -o-user-select: text;
+          user-select: text;
+          font-size: 12px;
+          padding: 0 15px;
+          float:left;
+          border-right:1px solid rgba(255,255,255,0.2);
+          img{
+            vertical-align: sub;
+            margin: 3px 2px 0;
+            max-width:15px;
+          }
+        }
+        #hilp_toolbar_settings{
+          font-size: 12px;
+          padding: 0 15px;
+          float:left;
+
+          a{
+            cursor: pointer;
+          }
+        }
+        #hilp_toolbar_deactivation{
+          width: 32px;
+          &:hover{
+            background: rgba(255,255,255,0.05);
+          }
+        }
+      }
+
+      ul{
+        background: rgba($darkgrey, 0.9);
+
+        li.hilp_menu{
+          display:inline-block;
+          vertical-align: top;
+
+          .hilp_pointer{
+            padding: 0 15px;
+            height: 32px;
+            display: block;
+          }
+          .ab-icon{
+            vertical-align: middle;
+            display: inline-block;
+            position: relative;
+            font: 400 20px/1 dashicons;
+            speak: none;
+            padding: 6px 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            &:before{
+              position: relative;
+            }
+          }
+
+          .ab-label{
+            vertical-align: middle;
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 32px;
+          }
+
+          &#hilp_toolbar_save{
+            .ab-icon{
+              &:before{
+                content: "\f480";
+              }
+            }
+          }
+          &#hilp_toolbar_send{
+            .ab-icon{
+              &:before{
+                content: "\f310";
+              }
+            }
+          }
+
+          &:hover{
+            background: rgba(255,255,255,0.05);
+          }
+        }
+      }
+
+      #hilp_loading{
+        position: fixed;
+        top: 0;
+        bottom:0;
+        left: 0;
+        width:100%;
+        font-size: 30px;
+        background: rgba(0,0,0,0.7);
+        z-index:1000;
+        color:$white;
+        text-align:center;
+        #hilp_loading_text{
+          position:absolute;
+          top:50%;
+          left:50%;
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+        }
+        &.true .dashicons{
+          animation: dashspin 1s infinite;
+          animation-timing-function: linear;
+        }
+      }
+
+
+
+      #hilp_panel{
+        width:100%;
+        background:$lightgrey;
+        > div{
+          float:left;
+          width:50%;
+          height:213px;
+          padding:10px 15px;
+          &:first-child{
+            padding-right:0;
+          }
+
+          #hilp_case, #hilp_portal{
+            background:rgba(0,0,0,0.5);
+            padding:10px;
+            border-radius:5px;
+            height:100%;
+          }
+
+          form{
+            display:block;
+            &#hilp_case_form{
+              height:168px;
+              overflow-y:auto;
+              counter-reset: li;
+              li{
+                display: block;
+                margin: 5px 0;
+                &:before{
+                  counter-increment: li;
+                  content: counter(li);
+                  width:5%;
+                  display:inline-block;
+                  text-align:center;
+                }
+                input{
+                  width:95%;
+                }
+              }
+              #hilp_add_pointer_wrap{
+                text-align:center;
+                #hilp_add_pointer{
+                  padding: 5px;
+                  display: inline-block;
+                  background: rgba(255,255,255,0.2);
+                  border-radius:99px;
+                  .dashicons{
+                    margin-right: 5px;
+                    color: rgba(255,255,255,1);
+                    cursor:pointer;
+                    &:before{
+                      font-size: 26px;
+                      position: relative;
+                      top: 4px;
+                      left: 2px;
+                      color: $yellow;
+                    }
+                  }
+
+                  &:hover{
+                    background: rgba(255,255,255,0.3);
+                  }
+                }
+              }
+
+
+            }
+          }
+
+          #hilp_portal{
+            text-align:center;
+            #hilp_login{
+              padding:15px;
+            }
+
+            #hilp_loggedin{
+              #hilp_portal_developers{
+                overflow-x: auto;
+                white-space: nowrap;
+                padding:10px 0;
+                height:113px;
+
+                .hilp_portal_developer{
+                  max-width: 100px;
+                  padding:0 5px;
+                  display: inline-block;
+                  img{
+
+                  }
+                  span{
+                    font-size:14px;
+                  }
+                }
+
+              }
+            }
+          }
+        }
+
+        .hilp_choose_plan{
+          >div{
+            display:inline-block;
+            width:50%;
+            padding:20px 0;
+          }
+          label > input{ /* HIDE RADIO */
+            visibility: hidden; /* Makes input not-clickable */
+            position: absolute; /* Remove input from document flow */
+          }
+          label > input + span{
+            display:block;
+            cursor:pointer;
+            border-radius:9999px;
+            border:2px solid transparent;
+            width:20px;
+            height:20px;
+            margin:0 auto 5px;
+            background:rgba(255,255,255,0.3);
+          }
+          label > input:checked + span{ /* (RADIO CHECKED) STYLES */
+            border:2px solid $yellow;
+          }
+        }
+
+      }
+
+    }
+    /* Toolbar END */
+
+    /* List */
+    #hilp_pins{
+      visibility: hidden;
+      top: -9999px;
+      left: -9999px;
+      opacity:0;
+      position:relative;
+      z-index:99;
+    }
+
+    .hilp_pointer{
+      cursor:pointer!important;
+    }
+
+
+    #hilp_list{
+      counter-reset: li;
+    }
+    .hilp_request{
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+      z-index: 99;
+      cursor:pointer;
+      transform: translateX(-50%);
+      &:before{
+        pointer-events: none;
+        counter-increment: li;
+        content: counter(li);
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%,-25%);
+        z-index: 9999;
+        color: $yellow;
+        font-size:11px;
+      }
+
+      &.hilp_focus{
+
+        .hilp_request_bar {
+          cursor: move !important;
+        }
+
+      }
+
+      .hilp_the_pointer{
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        width: 20px;
+        position: relative;
+        border: 10px solid rgba(0,0,0,0);
+        border-top: 20px solid $yellow;
+        border-bottom: 0 solid $yellow;
+        cursor: move!important;
+        -webkit-transition: all ease-in-out 0.3s;
+        -moz-transition: all ease-in-out 0.3s ;
+        -ms-transition: all ease-in-out 0.3s ;
+        -o-transition: all ease-in-out 0.3s ;
+        transition: all ease-in-out 0.3s ;
+        opacity:0.7;
+
+        &:before{
+          -webkit-transition: all ease-in-out 0.3s;
+          -moz-transition: all ease-in-out 0.3s ;
+          -ms-transition: all ease-in-out 0.3s ;
+          -o-transition: all ease-in-out 0.3s ;
+          transition: all ease-in-out 0.3s ;
+          -webkit-box-sizing: content-box;
+          -moz-box-sizing: content-box;
+          box-sizing: content-box;
+          width: 0;
+          height: 0;
+          position: absolute;
+          content: "";
+          bottom: 20px;
+          left: -10px;
+          border: 20px solid rgba(0,0,0,0);
+          border-bottom: 20px solid $yellow;
+        }
+
+        .inner-icon{
+          -webkit-box-sizing: content-box;
+          -moz-box-sizing: content-box;
+          box-sizing: content-box;
+          width: 16px;
+          position: absolute;
+          top:-19px;
+          left:-6px;
+          border: 8px solid rgba(0,0,0,0);
+          border-top: 16px solid $darkgrey;
+          border-bottom: 0 solid $darkgrey;
+          cursor: move!important;
+          -webkit-transition: all ease-in-out 0.3s;
+          -moz-transition: all ease-in-out 0.3s ;
+          -ms-transition: all ease-in-out 0.3s ;
+          -o-transition: all ease-in-out 0.3s ;
+          transition: all ease-in-out 0.3s ;
+
+          &:before{
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+            width: 0;
+            height: 0;
+            position: absolute;
+            content: "";
+            bottom: 16px;
+            left: -8px;
+            border: 16px solid rgba(0,0,0,0);
+            border-bottom: 16px solid $darkgrey;
+          }
+        }
+        transform-origin:top center;
+
+        &:hover{
+          opacity:1;
+        }
+      }
+
+    }
+    /* List END */
+
+    #hilp_trash_can{
+      position:fixed;
+      bottom:5px;
+      left:50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      background:rgba($red,0.5);
+      border:2px solid rgba($red,1);
+      color:$white;
+      font-size:33px;
+      padding:7px 70px 0px;
+      border-radius:2px;
+      font-family:sans-serif;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out ;
+      -ms-transition: all 0.3s ease-in-out ;
+      -o-transition: all 0.3s ease-in-out ;
+      transition: all 0.3s ease-in-out ;
+      &.hover{
+        background:rgba($red,1);
+        padding:7px 75px 0px;
+      }
+    }
+
+
+  }
+  /* App END */
+
+
+}
+
+
